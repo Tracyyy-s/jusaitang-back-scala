@@ -42,6 +42,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1oCmL8scSTUx4U3oxMrr1KCcKGL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -229,6 +230,7 @@
       <workItem from="1612805539450" duration="370000" />
       <workItem from="1612836297740" duration="20310000" />
       <workItem from="1612858145198" duration="5755000" />
+      <workItem from="1613216405314" duration="673000" />
     </task>
     <servers />
   </component>
