@@ -28,7 +28,7 @@ spring:
       # 最大单个文件大小
       max-file-size: 10MB
 
-# add log config
 logging:
   level:
+    # log level config
     org.springframework.web: DEBUG
