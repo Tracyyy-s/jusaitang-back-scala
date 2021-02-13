@@ -52,7 +52,7 @@ class ShiroConfig {
 
     // 添加过滤器配置
     filterChainDefinitionMap.put("/**", "anon")
-    
+
     shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap)
     shiroFilterFactoryBean
   }

@@ -124,8 +124,20 @@ class RedisUtil {
    * @param delta 递减的值(要减几)
    * @return
    */
-  def decr(key: String, delta: Long): Long = if (delta < 0) throw new RuntimeException("递减因子必须大于0")
-  else redisTemplate.opsForValue.increment(key, -delta)
+  def decr(key: String, delta: Long): Long = {
+    if (delta < 0)
+      throw new RuntimeException("递减因子必须大于0")
+    else
+      redisTemplate.opsForValue.increment(key, -delta)
+  }
 
+  /**
+   * 获取哈希表中的值
+   *
+   * @param key  键(not null)
+   * @param item 哈希表中的键(not null)
+   * @return 值
+   */
+  def hget(key: String, item: String): Object = redisTemplate.opsForHash.get(key, item)
 
 }
