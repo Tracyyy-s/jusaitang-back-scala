@@ -7,7 +7,7 @@ package com.tracy.competition.domain.constant
 object EncoderConstant {
 
   /**
-   * 加密盐值
+   * shiro密码加密盐值
    */
   final val SALT: String = "d86d7bab3d6ac01ad9dc6a897652f2d2"
 
