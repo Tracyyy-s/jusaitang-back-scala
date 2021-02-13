@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
  * @date 2021/2/8 23:53
  */
 object CompetitionApplication extends App {
+
+  // ~ project entrance
   SpringApplication.run(classOf[AppConfig])
 }
 
