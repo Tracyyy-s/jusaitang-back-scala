@@ -49,7 +49,10 @@ class ShiroConfig {
     filterChainDefinitionMap.put("/user/logout", "anon")
     filterChainDefinitionMap.put("/file/uploadFile", "anon")
     filterChainDefinitionMap.put("/notification/insertCompetition", "anon")
+
+    // 添加过滤器配置
     filterChainDefinitionMap.put("/**", "anon")
+    
     shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap)
     shiroFilterFactoryBean
   }
