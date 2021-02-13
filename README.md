@@ -2,7 +2,11 @@
 
 针对大学生竞赛组队困难、沟通不便等痛点研发的系统。系统包含发布比赛、组队报名、私聊等功能。
 
-**项目源码使用Scala实现，Java实现请详见：<https://github.com/Tracyyy-s/jusaitang-back>**
+**************************
+
+**项目源码使用Scala实现，Java实现请详见：<https://github.com/Tracyyy-s/jusaitang-back>**  
+**************************
+
 
 **技术栈：**
 
