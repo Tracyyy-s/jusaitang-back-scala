@@ -13,7 +13,7 @@ import java.util.List
  * 处理报名及获奖信息
  *
  * @author Tracy
- * @date 2020/11/4 17:09
+ * @date 2020/11/14 17:09
  */
 @Mapper
 trait ApplyDao {

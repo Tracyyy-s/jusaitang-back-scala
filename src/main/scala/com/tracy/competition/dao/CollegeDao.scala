@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper
 
 /**
  * @author Tracy
- * @date 2020/11/4 17:09
+ * @date 2020/11/14 17:09
  */
 @Mapper
 trait CollegeDao {
