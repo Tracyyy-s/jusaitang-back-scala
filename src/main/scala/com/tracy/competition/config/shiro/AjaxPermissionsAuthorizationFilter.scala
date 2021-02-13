@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod
  * @author Tracy
  * @date 2021/2/9 13:08
  */
-class AjaxPermissionsAuthorizationFilter extends FormAuthenticationFilter{
+class AjaxPermissionsAuthorizationFilter extends FormAuthenticationFilter {
 
   override protected def onAccessDenied(request: ServletRequest, response: ServletResponse): Boolean = {
     val jsonObject = new JSONObject
