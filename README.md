@@ -4,7 +4,7 @@
 
 **************************
 
-**项目源码使用Scala实现，Java实现请详见：<https://github.com/Tracyyy-s/jusaitang-back>**  
+**项目源码使用Scala编写，Java版请详见：<https://github.com/Tracyyy-s/jusaitang-back>**  
 **************************
 
 
