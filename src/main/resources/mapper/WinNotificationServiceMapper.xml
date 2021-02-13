@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tracy.competition.dao.WinNotificationServiceDao">
+    <select id="findAllWinNotification" parameterType="Integer" resultMap="notificationMap">
+        SELECT n.notification_id notification_id,n.notification_time notification_time,n.notification_title
+        notification_title,
+        c.competition_id competition_id, c.competition_name competition_name,f.file_path file_path, f.file_name
+        file_name,
+        f.file_id file_id
+        -- , c.competition_level competition_level,
+        -- c.competition_type competition_type, c.competition_site competition_site,
+        -- c.competition_state competitionState
+        FROM t_notification n
+        LEFT JOIN t_competition c
+        ON n.competition_id = c.competition_id
+        LEFT JOIN t_file f
+        ON f.notification_id = n.notification_id
+        WHERE n.notification_type = #{v}
+        ORDER BY notification_time DESC
+    </select>
+
+    <resultMap id="notificationMap" type="com.tracy.competition.domain.entity.Notification">
+        <id column="notification_id" property="notificationId" javaType="String"/>
+        <result column="notification_time" property="notificationTime" javaType="Long"/>
+        <!--        <result column="notification_state" property="notificationState" javaType="Integer" />-->
+        <result column="notification_title" property="notificationTitle" javaType="String"/>
+        <association property="competition" javaType="com.tracy.competition.domain.entity.Competition" column="competition_id">
+            <id column="competition_id" property="competitionId" javaType="String"/>
+            <result column="competition_name" property="competitionName" javaType="String"/>
+            <!--            <result column="competition_level" property="competitionLevel" javaType="Integer" />-->
+            <!--            <result column="competition_type" property="competitionType" javaType="String" />-->
+            <!--            <result column="competition_site" property="competitionSite" javaType="String" />-->
+            <!--            <result column="competition_state" property="competitionState" javaType="Integer" />-->
+        </association>
+        <collection property="files" ofType="com.tracy.competition.domain.entity.File" column="file_id">
+            <id column="file_id" property="fileId" javaType="String"/>
+            <result column="file_name" property="fileName" javaType="String"/>
+            <result column="file_path" property="filePath" javaType="String"/>
+        </collection>
+    </resultMap>
+
+    <insert id="insertWinNotification" parameterType="com.tracy.competition.domain.entity.Notification">
+        INSERT INTO t_notification(notification_id, notification_time, notification_title, notification_type,
+        competition_id)
+        VALUES (#{notificationId}, #{notificationTime}, #{notificationTitle}, #{notificationType},
+        #{competition.competitionId})
+    </insert>
+
+    <update id="updateWinRanking">
+        UPDATE t_user_competition SET win_ranking = #{ranking} WHERE user_id = #{userId} AND competition_id =
+        #{competitionId}
+    </update>
+
+    <update id="deleteWin" parameterType="String">
+        UPDATE t_user_competition SET win_ranking = NULL, win_level_name = NULL WHERE competition_id = #{competitionId}
+    </update>
+
+    <update id="updateWinNotification" parameterType="com.tracy.competition.domain.entity.Notification">
+        UPDATE t_notification SET notification_id = #{notificationId}
+        <if test="notificationTitle != null and notificationTitle != ''">
+            ,notification_title = #{notificationTitle}
+        </if>
+        <if test="competition.competitionId != null and competition.competitionId != ''">
+            ,competition_id = #{competition.competitionId}
+        </if>
+        WHERE notification_id = #{notificationId}
+    </update>
+
+</mapper>

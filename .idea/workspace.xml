@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7e92b197-bff7-43a1-b6f1-fac894436890" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Maven/maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Maven\maven-3.6.3\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx1536m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1oCmL8scSTUx4U3oxMrr1KCcKGL" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../Android" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/com/tracy/competition" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tracy.competition.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA_\SpringBoot-plus\jusaitang-back-scala\src\main\scala\com\tracy\competition" />
+      <recent name="D:\IDEA_\SpringBoot-plus\jusaitang-back-scala\src\main\resources" />
+      <recent name="D:\IDEA_\SpringBoot-plus\jusaitang-back-scala\src\main\java\com\tracy\competition\domain" />
+      <recent name="D:\IDEA_\SpringBoot-plus\jusaitang-back-scala\src\main\java\com\tracy\jusaitang" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest.test02">
+    <configuration name="CompetitionApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.tracy.competition.CompetitionApplication" />
+      <module name="jusaitang-back-scala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracy.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest2.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jusaitang-back-scala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracy.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tracy.competition" />
+      <option name="MAIN_CLASS_NAME" value="com.tracy.competition.AppTest2" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jusaitang-back-scala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracy.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tracy.competition" />
+      <option name="MAIN_CLASS_NAME" value="com.tracy.competition.AppTest" />
+      <option name="METHOD_NAME" value="test02" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.test03" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jusaitang-back-scala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracy.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tracy.competition" />
+      <option name="MAIN_CLASS_NAME" value="com.tracy.competition.AppTest" />
+      <option name="METHOD_NAME" value="test03" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.test05" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jusaitang-back-scala" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tracy.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tracy.competition" />
+      <option name="MAIN_CLASS_NAME" value="com.tracy.competition.AppTest" />
+      <option name="METHOD_NAME" value="test05" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CompetitionApplication" />
+      <item itemvalue="JUnit.AppTest.test02" />
+      <item itemvalue="JUnit.AppTest.test03" />
+      <item itemvalue="JUnit.AppTest.test05" />
+      <item itemvalue="JUnit.AppTest2.test01" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.test02" />
+        <item itemvalue="JUnit.AppTest2.test01" />
+        <item itemvalue="JUnit.AppTest.test05" />
+        <item itemvalue="Application.CompetitionApplication" />
+        <item itemvalue="JUnit.AppTest.test03" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="F:/GitHubRepository/kafka-spark-streaming-to-hbase" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e92b197-bff7-43a1-b6f1-fac894436890" name="Default Changelist" comment="" />
+      <created>1612798887610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612798887610</updated>
+      <workItem from="1612798890102" duration="2383000" />
+      <workItem from="1612801288500" duration="4217000" />
+      <workItem from="1612805539450" duration="370000" />
+      <workItem from="1612836297740" duration="20310000" />
+      <workItem from="1612858145198" duration="5755000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#Project_Structure" timestamp="1612867104980">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1612867104980" />
+    <state x="499" y="170" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1612862389454">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="170" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612862389454" />
+    <state x="223" y="70" width="1155" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612841291902">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="70" width="1155" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1612841291902" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1612852625997">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1612852625997" />
+    <state x="353" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612805182441">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="353" y="340" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1612805182441" />
+    <state width="1493" height="356" key="GridCell.Tab.0.bottom" timestamp="1612868931230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="356" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612868931230" />
+    <state width="1493" height="356" key="GridCell.Tab.0.center" timestamp="1612868931229">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="356" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612868931229" />
+    <state width="1493" height="356" key="GridCell.Tab.0.left" timestamp="1612868931229">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="356" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612868931229" />
+    <state width="1493" height="356" key="GridCell.Tab.0.right" timestamp="1612868931230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="356" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612868931230" />
+    <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1612805512924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612805512924" />
+    <state width="1024" height="210" key="GridCell.Tab.1.center" timestamp="1612805512924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1612805512924" />
+    <state width="1024" height="210" key="GridCell.Tab.1.left" timestamp="1612805512924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1612805512924" />
+    <state width="1024" height="210" key="GridCell.Tab.1.right" timestamp="1612805512924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1612805512924" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1612867119508">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1612867119508" />
+    <state x="490" y="154" width="546" height="524" key="StructurePopup" timestamp="1612845895464">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="490" y="154" width="546" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1612845895464" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1612859145625">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1612859145625" />
+    <state x="379" y="104" key="spring file set editor" timestamp="1612802835430">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="379" y="104" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1612802835430" />
+  </component>
+</project>

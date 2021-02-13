@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tracy.competition.dao.UserDao">
+
+<!-- 手动映射User的内容 -->
+    <resultMap id="userMap" type="com.tracy.competition.domain.entity.User">
+        <id column="user_id" property="userId" javaType="String"/>
+        <result column="user_name" property="userName" javaType="String"/>
+        <result column="email" property="email" javaType="String"/>
+        <result column="password" property="password" javaType="String"/>
+        <result column="name" property="name" javaType="String"/>
+        <result column="phone" property="phone" javaType="String"/>
+        <result column="sex" property="sex" javaType="String"/>
+        <result column="period" property="period" javaType="Integer"/>
+        <result column="user_className" property="userClassName" javaType="String"/>
+
+        <association property="college" column="college_id" javaType="com.tracy.competition.domain.entity.College">
+            <id column="college_id" property="collegeId" javaType="String"/>
+            <result column="college_name" property="collegeName" javaType="String"/>
+            <association property="university" column="university_id" javaType="com.tracy.competition.domain.entity.University">
+                <id column="university_id" property="universityId" javaType="String"/>
+                <result column="university_name" property="universityName" javaType="String"/>
+            </association>
+        </association>
+
+        <!-- 用户-角色需要使用collection进行映射 一对多使用 配置在一的一方添加属性 collection：对关联查询的多条记录映射到集合对象中去
+        property: 将关联查询出来的多条记录映射到类中的那个属性中 list ofType : 指定映射到集合属性中的pojo类，list的泛型 -->
+        <collection property="roles" column="role_id" ofType="com.tracy.competition.domain.entity.Role">
+            <id column="role_id" property="roleId" javaType="String"/>
+            <result column="role_name" property="roleName" javaType="String"/>
+        </collection>
+    </resultMap>
+
+    <!--    根据用户名密码查找用户-->
+    <select id="findByUsernameAndPassword" parameterType="com.tracy.competition.domain.entity.User"
+            resultType="com.tracy.competition.domain.entity.User">
+        SELECT * FROM t_user
+        WHERE username=#{userName} AND password=#{password}
+    </select>
+
+    <!--  修改用户的基本信息  -->
+    <update id="updateUser" parameterType="com.tracy.competition.domain.entity.User">
+        UPDATE t_user
+        <trim prefix="set">
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex}
+            </if>
+        </trim>
+        WHERE user_name = #{userName}
+    </update>
+
+    <select id="findCollegeIdByUserName" parameterType="String" resultType="String">
+        SELECT college_id FROM t_user WHERE user_name = #{v}
+    </select>
+
+    <select id="findUserByUserName" parameterType="String" resultMap="userMap">
+        SELECT u.user_id user_id, u.user_name user_name, u.email email, u.password password, u.name name, u.phone phone,
+        u.sex sex,u.user_className user_className, u.period period, r.role_id role_id, r.role_name role_name,
+        c.college_id college_id,
+        c.college_name college_name, un.university_id university_id, un.university_name university_name
+        FROM t_user u
+        LEFT JOIN t_user_role ur
+        ON u.user_id = ur.user_id
+        LEFT JOIN t_role r
+        ON ur.role_id = r.role_id
+        LEFT JOIN t_college c
+        ON u.college_id = c.college_id
+        LEFT JOIN t_university un
+        ON c.university_id = un.university_id
+        WHERE u.user_name = #{userName}
+    </select>
+
+
+    <select id="findUserByUserId" parameterType="String" resultMap="userMap">
+        SELECT u.user_id user_id, u.user_name user_name, u.email email, u.password password, u.name name, u.phone phone,
+        u.sex sex,u.user_className user_className, u.period period, r.role_id role_id, r.role_name role_name,
+        c.college_id college_id,
+        c.college_name college_name, un.university_id university_id, un.university_name university_name
+        FROM t_user u
+        LEFT JOIN t_user_role ur
+        ON u.user_id = ur.user_id
+        LEFT JOIN t_role r
+        ON ur.role_id = r.role_id
+        LEFT JOIN t_college c
+        ON u.college_id = c.college_id
+        LEFT JOIN t_university un
+        ON c.university_id = un.university_id
+        WHERE u.user_id = #{v}
+    </select>
+
+    <update id="updatePassword" parameterType="com.tracy.competition.domain.entity.User">
+        UPDATE t_user SET password = #{password} WHERE user_id = #{userId}
+    </update>
+
+    <select id="getAllUser" resultMap="userMap">
+        SELECT u.user_id user_id, u.user_name user_name, u.email email, u.password password, u.name name, u.phone phone,
+        u.sex sex,u.user_className user_className, u.period period, r.role_id role_id, r.role_name role_name,
+        c.college_id college_id,
+        c.college_name college_name, un.university_id university_id, un.university_name university_name
+        FROM t_user u
+        LEFT JOIN t_user_role ur
+        ON u.user_id = ur.user_id
+        LEFT JOIN t_role r
+        ON ur.role_id = r.role_id
+        LEFT JOIN t_college c
+        ON u.college_id = c.college_id
+        LEFT JOIN t_university un
+        ON c.university_id = un.university_id
+    </select>
+
+
+</mapper>

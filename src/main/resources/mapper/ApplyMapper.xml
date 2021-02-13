@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tracy.competition.dao.ApplyDao">
+    <insert id="insertApply" parameterType="com.tracy.competition.domain.entity.UserCompetition">
+        INSERT INTO t_user_competition(competition_id, user_id, date) values (#{competition.competitionId},
+        #{user.userId}, #{date})
+    </insert>
+
+
+    <select id="findApplyByUserIdAndCompetitionId" parameterType="com.tracy.competition.domain.entity.UserCompetition"
+            resultType="com.tracy.competition.domain.entity.UserCompetition">
+        SELECT * FROM t_user_competition WHERE user_id = #{user.userId} AND competition_id =
+        #{competition.competitionId}
+    </select>
+
+    <select id="deleteApply" parameterType="com.tracy.competition.domain.entity.UserCompetition">
+        DELETE FROM t_user_competition WHERE user_id = #{user.userId} AND competition_id = #{competition.competitionId}
+    </select>
+
+    <select id="findApplyByUserIdAndApplyStateAndTeamId" parameterType="com.tracy.competition.domain.entity.Apply"
+            resultType="com.tracy.competition.domain.entity.Apply">
+        SELECT * FROM t_apply WHERE user_id = #{user.userId} AND team_id = #{team.teamId} AND apply_state = 0
+    </select>
+
+    <delete id="deleteTeamApply" parameterType="String">
+        DELETE FROM t_apply WHERE apply_id = #{aplyId}
+    </delete>
+
+    <select id="findWinByCompetitionId" parameterType="String" resultMap="findWinByCompetitionIdMap">
+        SELECT uc.competition_id competition_id, uc.user_id user_id, uc.win_ranking win_ranking, uc.win_level_name
+        win_level_name,
+        u.name name,u.user_className user_className, c.competition_name competition_name, tc.college_name college_name
+        FROM t_user_competition uc
+        LEFT JOIN t_user u
+        ON uc.user_id = u.user_id
+        LEFT JOIN t_competition c
+        ON uc.competition_id = c.competition_id
+        LEFT JOIN t_college tc
+        ON u.college_id = tc.college_id
+        WHERE uc.competition_id = #{v} AND uc.win_ranking != ""
+        ORDER BY win_ranking
+    </select>
+
+    <resultMap id="findWinByCompetitionIdMap" type="com.tracy.competition.domain.entity.UserCompetition">
+        <id column="competition_id" property="competition.competitionId" javaType="String"/>
+        <id column="user_id" property="user.userId" javaType="String"/>
+        <result column="win_ranking" property="winRanking" javaType="Integer"/>
+        <result column="win_level_name" property="winLevelName" javaType="String"/>
+        <association property="user" javaType="com.tracy.competition.domain.entity.User" column="user_id">
+            <id column="user_id" property="userId" javaType="String"/>
+            <result column="name" property="name" javaType="String"/>
+            <result column="user_className" property="userClassName" javaType="String"/>
+        </association>
+        <association property="competition" javaType="com.tracy.competition.domain.entity.Competition" column="competition_id">
+            <id column="competition_id" property="competitionId" javaType="String"/>
+            <result column="competition_name" property="competitionName" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <insert id="insertTeamApply" parameterType="com.tracy.competition.domain.entity.Apply">
+        INSERT INTO t_apply(apply_id, apply_time, apply_content, apply_state, team_id, user_id)
+        VALUES (#{applyId}, #{applyTime}, #{applyContent}, #{applyState}, #{team.teamId}, #{user.userId})
+    </insert>
+
+    <update id="updateApplyByDispose" parameterType="com.tracy.competition.domain.entity.Apply">
+        UPDATE t_apply SET apply_state = #{applyState}, apply_dispose_time = #{applyDisposeTime} WHERE apply_id =
+        #{applyId}
+    </update>
+
+    <select id="findMyApplyList" resultMap="ApplyListMap">
+        SELECT a.apply_id apply_id, a.apply_time apply_time, a.apply_state apply_state,a.apply_dispose_time
+        apply_dispose_time,
+        a.apply_content apply_content,t.team_id team_id, t.team_name team_name, c.competition_id competition_id,
+        c.competition_name competition_name
+        FROM t_apply a
+        LEFT JOIN t_team t
+        ON a.team_id = t.team_id
+        LEFT JOIN t_competition c
+        ON t.competition_id = c.competition_id
+        WHERE a.user_id = #{userId} AND a.apply_state = #{applyState}
+        ORDER BY a.apply_time DESC
+    </select>
+
+    <resultMap id="ApplyListMap" type="com.tracy.competition.domain.entity.Apply">
+        <id column="apply_id" property="applyId" javaType="String"/>
+        <result column="apply_time" property="applyTime" javaType="Long"/>
+        <result column="apply_state" property="applyState" javaType="Integer"/>
+        <result column="apply_dispose_time" property="applyDisposeTime" javaType="Long"/>
+        <result column="apply_content" property="applyContent" javaType="String"/>
+        <association property="team" javaType="com.tracy.competition.domain.entity.Team" column="team_id">
+            <id column="team_id" property="teamId" javaType="String"/>
+            <result column="team_name" property="teamName" javaType="String"/>
+            <association property="competition" javaType="com.tracy.competition.domain.entity.Competition"
+                         column="competition_id">
+                <id column="competition_id" property="competitionId" javaType="String"/>
+                <result column="competition_name" property="competitionName" javaType="String"/>
+            </association>
+        </association>
+    </resultMap>
+
+    <select id="findMyHistoryApplyList" resultMap="ApplyListMap">
+        SELECT a.apply_id apply_id, a.apply_time apply_time, a.apply_state apply_state,a.apply_dispose_time
+        apply_dispose_time,
+        a.apply_content apply_content,t.team_id team_id, t.team_name team_name, c.competition_id competition_id,
+        c.competition_name competition_name
+        FROM t_apply a
+        LEFT JOIN t_team t
+        ON a.team_id = t.team_id
+        LEFT JOIN t_competition c
+        ON t.competition_id = c.competition_id
+        WHERE a.user_id = #{userId} AND a.apply_state != #{applyState}
+        ORDER BY a.apply_dispose_time DESC
+    </select>
+
+    <insert id="insertUserTeam" parameterType="com.tracy.competition.domain.entity.UserTeam">
+        INSERT INTO t_user_team(user_id, team_id) VALUES (#{userId}, #{teamId})
+    </insert>
+
+    <delete id="deleteApplyByTeamId" parameterType="String">
+        DELETE FROM t_apply WHERE team_id = #{v}
+    </delete>
+
+</mapper>

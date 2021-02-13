@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tracy.competition.dao.RecruitDao">
+    <select id="findAllTeamByState" resultMap="findAllTeamByStateMap">
+        SELECT t.team_id team_id, t.team_name team_name, t.team_headcount team_headcount, t.team_content team_content,
+        c.competition_id competition_id, c.competition_name competition_name, u.user_id user_id, u.name name,
+        u.phone phone, u.email email
+        FROM t_team t
+        LEFT JOIN t_competition c
+        ON c.competition_id = t.competition_id
+        LEFT JOIN t_user u
+        ON u.user_id = t.captain_id
+        WHERE t.team_state = #{teamState} AND t.captain_id != #{captainId}
+
+    </select>
+
+    <resultMap id="findAllTeamByStateMap" type="com.tracy.competition.domain.entity.Team">
+        <id column="team_id" property="teamId" javaType="String"/>
+        <result column="team_name" property="teamName" javaType="String"/>
+        <result column="team_headcount" property="teamHeadcount" javaType="Integer"/>
+        <result column="team_content" property="teamContent" javaType="String"/>
+        <collection property="captain" javaType="com.tracy.competition.domain.entity.User" column="user_id">
+            <id column="user_id" property="userId" javaType="String"/>
+            <result column="name" property="name" javaType="String"/>
+            <result column="phone" property="phone" javaType="String"/>
+            <result column="email" property="email" javaType="String"/>
+        </collection>
+        <collection property="competition" javaType="com.tracy.competition.domain.entity.Competition" column="competition_id">
+            <id column="competition_id" property="competitionId" javaType="String"/>
+            <result column="competition_name" property="competitionName" javaType="String"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAllUserTeam" parameterType="String" resultType="com.tracy.competition.domain.entity.UserTeam">
+        SELECT * FROM t_user_team WHERE user_id = #{v}
+    </select>
+
+</mapper>
+

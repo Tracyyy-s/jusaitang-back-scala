@@ -1,0 +1,33 @@
+server:
+  port: 8999
+  servlet:
+    context-path: /competition
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+
+spring:
+  # redis配置
+  redis:
+    host: www.tracys.cn
+    port: 6379
+    password: GONGRAN0812
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: 100ms
+        max-idle: 8
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 1000ms
+  servlet:
+    multipart:
+      # 最大上传文件大小
+      max-request-size: 20MB
+      # 最大单个文件大小
+      max-file-size: 10MB
+
+logging:
+  level:
+    org.springframework.web: DEBUG
