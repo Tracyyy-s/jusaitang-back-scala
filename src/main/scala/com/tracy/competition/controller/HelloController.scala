@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.{RequestMapping, ResponseBody, Re
 class HelloController {
 
   @ResponseBody
-  @RequestMapping("/nihao")
+  @RequestMapping(Array("/nihao"))
   def hello(): String = {
     "hello world"
   }
