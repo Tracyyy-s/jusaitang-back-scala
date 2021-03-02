@@ -55,7 +55,7 @@ class FileController {
       return uploadMsg
     }
     redisUtil.del("competitionId")
-    return ResponseMessage("1", "操作成功")
+    ResponseMessage("1", "操作成功")
   }
 
   /**
