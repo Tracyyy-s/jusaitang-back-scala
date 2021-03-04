@@ -70,7 +70,8 @@ class UserRealm extends AuthorizingRealm{
   override protected def doGetAuthenticationInfo(authenticationToken: AuthenticationToken): AuthenticationInfo = { //转换为UsernamePasswordToken
     val upToken: UsernamePasswordToken = authenticationToken.asInstanceOf[UsernamePasswordToken]
     //从数据库中获取用户信息
-    System.out.println(userService.findUserByUserName(upToken.getUsername))
+    println(userService.findUserByUserName(upToken.getUsername))
+
     val userFindUserByUsername: User = userService.findUserByUserName(upToken.getUsername)
     if (userFindUserByUsername == null) throw new UnknownAccountException("用户不存在")
     userFindUserByUsername.setRoles(roleService.getRoleByUserId(userFindUserByUsername.getUserId))
